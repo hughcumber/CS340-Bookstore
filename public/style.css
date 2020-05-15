@@ -57,10 +57,10 @@ div.scroll {
 }
 
 .content:nth-child(even) {
-    background-color: #e6ffcc;
+  background-color: #e6ffcc;
 }
 .content:nth-child(odd) {
-    background-color: #b3ffe6;
+  background-color: #b3ffe6;
 }
 
 #colName {
