@@ -10,7 +10,7 @@ ul.a {
 
 li.a {
   float: left;
-  text-align: center;	
+  text-align: center;
 }
 
 ul.b{
@@ -18,7 +18,7 @@ ul.b{
 }
 
 li.b {
-  color: #000099;	
+  color: #000099;
 }
 
 li a {
@@ -54,11 +54,31 @@ div.scroll {
 
 .center3 {
 	align: center;
-}	
+}
 
 .content:nth-child(even) {
     background-color: #e6ffcc;
 }
 .content:nth-child(odd) {
     background-color: #b3ffe6;
+}
+
+#colName {
+  background-color: #009879;
+  font-weight: bold;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.table, tr, td {
+
+  font: sans-serif;
+  padding: 12px;
+  border: 1px solid #009879;
+  border-radius: 5px;
+  text-align: left;
+
+
+
 }

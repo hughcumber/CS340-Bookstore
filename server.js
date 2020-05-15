@@ -14,6 +14,7 @@ app.get('/index.html', function(req, res, next){
 });
 
 
+
 app.get("*", function (req, res) {
     console.log(req.url, "not found");
     res.status(404);
