@@ -1,0 +1,26 @@
+{
+  "name": "cs340-bookstore",
+  "version": "1.0.0",
+  "description": "A simple RDB for a bookstore",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "nodemon": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hughcumber/CS340-Bookstore.git"
+  },
+  "author": "Hugh MacWilliams, Hisami Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hughcumber/CS340-Bookstore/issues"
+  },
+  "homepage": "https://github.com/hughcumber/CS340-Bookstore#readme"
+}
