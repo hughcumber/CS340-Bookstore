@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `Books` (
   `buyback_price` float NOT NULL,
   `price` float NOT NULL,
   PRIMARY KEY (`book_id`)
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS `Customers` (
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `Customers` (
   `password` varchar(255) NOT NULL,
   `balance` float NOT NULL,
   PRIMARY KEY (`customer_id`)
-)
+);
 
 CREATE TABLE IF NOT EXISTS `Orders` (
   `order_num` int(11) NOT NULL AUTO_INCREMENT,
@@ -26,14 +26,14 @@ CREATE TABLE IF NOT EXISTS `Orders` (
   `order_balance` float NOT NULL,
   PRIMARY KEY (`order_num`),
   FOREIGN KEY (`customer_id`) REFERENCES Customers(`customer_id`)
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS `Authors` (
   `author_id` int(11) NOT NULL AUTO_INCREMENT,
   `auth_name` varchar(225) NOT NULL,
    PRIMARY KEY (`author_id`)
-)
+);
 
 
 
@@ -44,16 +44,16 @@ CREATE TABLE IF NOT EXISTS `Books_Authors` (
    PRIMARY KEY (`id`),
    FOREIGN KEY (`author_id`) REFERENCES Authors(`author_id`),
    FOREIGN KEY (`book_id`) REFERENCES Books(`book_id`)
-)
+);
 
-CREATE TABLE IF NOT EXISTS `Ordres_Books` (
+CREATE TABLE IF NOT EXISTS `Orders_Books` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `book_id` int(11) NOT NULL,
   `order_num` int(11),
-   PRIMARY KEY (`id
-   FOREIGN KEY (`book_id`) REFERENCES Books(`book_id`)
+   PRIMARY KEY (`id`),
+   FOREIGN KEY (`book_id`) REFERENCES Books(`book_id`),
    FOREIGN KEY (`order_num`) REFERENCES Orders(`order_num`)
-)
+);
 
 INSERT INTO `Books`(`book_id`, `auth_name`, `book_name`, `num_pages`, `genre`, `edition`, `buyback_price`, `price`)
 VALUES (1,"Taro Suzuki","Data Structure",500, "Programming", 2,25,70),
@@ -66,7 +66,7 @@ VALUES (1,"Taro Suzuki","Data Structure",500, "Programming", 2,25,70),
 INSERT INTO `Customers`(`customer_id`, `last_name`, `email`, `password`, `balance`)
 VALUES (1, 'scott', 'scotthi@oregonstate.edu','testpassword1', 200.0),
 		(2, 'saito', 'saito@oregonstate.edu', 'testpassword2', 100.0),
-		(3, 'yamada', 'yamada2@oregonstate.edu', 'testpassword3', 50.0)
+		(3, 'yamada', 'yamada2@oregonstate.edu', 'testpassword3', 50.0);
 
 
 INSERT INTO `Orders`(`order_num`, `customer_id`, `order_balance`)
