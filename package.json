@@ -4,6 +4,7 @@
   "description": "A simple RDB for a bookstore",
   "main": "server.js",
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "nodemon": "^2.0.3"
