@@ -62,7 +62,6 @@ VALUES (1,"Taro Suzuki","Data Structure",500, "Programming", 2,25,70),
 
 
 
-
 INSERT INTO `Customers`(`customer_id`, `last_name`, `email`, `password`, `balance`)
 VALUES (1, 'scott', 'scotthi@oregonstate.edu','testpassword1', 200.0),
 		(2, 'saito', 'saito@oregonstate.edu', 'testpassword2', 100.0),

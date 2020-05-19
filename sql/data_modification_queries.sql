@@ -1,25 +1,27 @@
-Search Page
+-- Search Page
+-- Allows a user to search for a book by entering bookname
+-- Intentionally vague to give more related results
 
-//Search a book (Author and Edition are required)
-SELECT book_id, auth_name, book_name, edition FROM `Books` WHERE `book_name` LIKE "data structure" AND `edition` = 2
+SELECT book_id, auth_name, book_name, edition FROM `Books` WHERE `book_name` = :bookInput
 
+-- Purchase page
+-- This ignores edition number and presents a list of books with the same name
 
+SELECT *  FROM `Books` WHERE `book_name` = :bookInput
 
-Purchase page
+-- Add to order entity
 
-SELECT *  FROM `Books` WHERE `book_name` LIKE "data structure" AND `edition` = 2
+INSERT INTO `Orders`(`order_num`, `customer_id`, `order_balance`),
+VALUES (:orderInput, :idInput, :balanceInput);
 
-Add to order database
+-- Return Page
+-- Removes an order from the orders entity
+-- Eventually need to add refunding the customer
 
-INSERT INTO `Orders`(`order_num`, `customer_id`, `order_balance`) VALUES (4,2,20)
+DELETE FROM 'Orders' WHERE 'order_num' = :numInput AND 'customer_id'
 
-Return Page
+-- Delete Book page
 
+DELETE FROM 'Books' WHERE 'book_name' = :bookInput
 
-
-Delete Book page
-
-
-
-
-Account Page
+-- Account Page
