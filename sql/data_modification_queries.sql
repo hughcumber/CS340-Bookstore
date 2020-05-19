@@ -25,3 +25,10 @@ DELETE FROM 'Orders' WHERE 'order_num' = :numInput AND 'customer_id'
 DELETE FROM 'Books' WHERE 'book_name' = :bookInput
 
 -- Account Page
+-- Add Customer, update customer information, and display account information
+INSERT INTO `Customers`(`customer_id`, `last_name`, `email`, `password`) 
+VALUES (:customeridInput, :lastnameInput, :emailInput, :passwordInput)
+
+UPDATE `Customers` SET `last_name`= :lastnameInput,`email`= :emailnewInput WHERE :emailcurrentInput
+
+SELECT last_name, balance, email  FROM `Customers` WHERE :emailInput
