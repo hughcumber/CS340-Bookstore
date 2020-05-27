@@ -1,0 +1,23 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Sign up for account:</h3>
+
+<form id="addAccount" action="/account" method="post">
+    last name: <input type="text" name="lastName"><br>
+    email: <input type="text" name="email"><br>
+    password: <input type="password" name="password"><br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+
+
+<form id='search_account' action='' method=''>
+    <label> Search account for last name starting with:</label>
+    <input id='last_name_search_string' type='text' name='last_name_search_string' value=''>
+    <input type="button" value="Search" onclick="searchAccountByLastName()">
+</form>
+
+
+</html>
