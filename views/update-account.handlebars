@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+ </head>
+
+<ul class = "a" >
+   <li class = "a"><a href="index.html">Homepage</a></li>
+   <li class = "a"><a href='/book'>Manage Books</a></li>
+   <li class = "a"><a href= '/account'>Account</a></li>
+   <li class = "a"><a href="return.html">Return</a></li>
+   <li class = "a"><a href="purchase.html">Purchase</a></li>
+</ul>
+
+
+<h1>Update {{account.last_name}} {{account.email}}:</h1>
+<form id="update-account" action="/account" method="post">
+    Last name: <input type="text" name="last_name" value="{{account.last_name}}"><br>
+    Email: <input type="text" name="email" value="{{account.email}}"><br>
+</form>
+<button onclick="updateAccount({{account.id}})">Update</button>
+</html>

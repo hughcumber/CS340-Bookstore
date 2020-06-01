@@ -1,23 +1,56 @@
 <html>
-{{#each foo}}
-{{this}}
-{{/each}}
+ <head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+ </head>
+ 
+<ul class = "a" >
+   <li class = "a"><a href="index.html">Homepage</a></li>
+   <li class = "a"><a href='/book'>Manage Books</a></li>
+   <li class = "a"><a href= '/account'>Account</a></li>
+   <li class = "a"><a href="return.html">Return</a></li>
+   <li class = "a"><a href="purchase.html">Purchase</a></li>
+</ul>
 <h3>Sign up for account:</h3>
 
+
+
 <form id="addAccount" action="/account" method="post">
-    last name: <input type="text" name="lastName"><br>
-    email: <input type="text" name="email"><br>
-    password: <input type="password" name="password"><br>
+    Last name: <input type="text" name="last_name"><br>
+    Email: <input type="text" name="email"><br>
     <input type="submit" value="Submit">
  </form>
 <br/>
 
+<h3>Search account:</h3>
 
-<form id='search_account' action='' method=''>
-    <label> Search account for last name starting with:</label>
-    <input id='last_name_search_string' type='text' name='last_name_search_string' value=''>
-    <input type="button" value="Search" onclick="searchAccountByLastName()">
+<form id='searchAccount' action='' method=''>
+    <label> Enter Email Address :</label>
+    <input id='email' type='text' name='email' value=''>
+    <input type="button" value="Search" onclick="searchAccountByEmail()">
 </form>
 
+<br>
+
+<table>
+        <caption><b>Current Account:</b></caption>
+        <thead>
+            <th>LastName</th>
+            <th>Email</th>
+			<th>Balance</th>
+        </thead>  
+        <tbody>
+            {{#each account}} 
+            <tr>
+                <td>{{last_name}}</td> 
+                <td>{{email}}</td> 
+                <td>{{balance}}</td> 
+				<td><button onclick="deleteAccount({{id}})">Delete</button></td>
+				<td><a href="/account/{{id}}">Update</a></td>
+            </tr> 
+            {{/each}} 
+        </tbody>  
+    </table>
 
 </html>

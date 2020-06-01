@@ -1,0 +1,28 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+ </head>
+ 
+<ul class = "a" >
+   <li class = "a"><a href="index.html">Homepage</a></li>
+   <li class = "a"><a href='/book'>Manage Books</a></li>
+   <li class = "a"><a href= '/account'>Account</a></li>
+   <li class = "a"><a href="return.html">Return</a></li>
+   <li class = "a"><a href="purchase.html">Purchase</a></li>
+</ul>
+
+
+<h1>Update {{book.book_name}} {{book.edition}}:</h1>
+<form id="update-book" action="/book" method="post">
+	Author name: <input type="text" name="auth_name" value="{{book.auth_name}}"><br>
+    Title: <input type="text" name="book_name" value="{{book.book_name}}"><br>
+	Number of pages: <input type="number" name="num_pages" value="{{book.num_pages}}"><br>
+    Genre: <input type="text" name="genre" value="{{book.genre}}"><br>
+	Edition: <input type="number" name="edition" value="{{book.edition}}"><br>
+    Price: <input type="number" name="price" value="{{book.price}}"><br>
+	Buyback price: <input type="number" name="buyback_price" value="{{book.buyback_price}}"><br>
+</form>
+<button onclick="updateBook({{book.id}})">Update</button>
+</html>

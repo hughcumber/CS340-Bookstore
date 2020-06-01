@@ -1,0 +1,56 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+ </head>
+ <ul class = "a" >
+   <li class = "a"><a href="index.html">Homepage</a></li>
+   <li class = "a"><a href='/search'>Search</a></li>
+   <li  class = "a"><a href="return.html">Return</a></li>
+   <li class = "a"><a href="purchase.html">Purchase</a></li>
+   <li class = "a"><a href='/book'>Manage Books</a></li>
+   <li class = "a"><a href= '/account'>Account</a></li>
+
+</ul>
+
+
+<h3>Search Book test:</h3>
+
+<form id='searchBook' action='' method=''>
+    <label> Enter Book Title :</label>
+    <input id='book_name' type='text' name='book_name' value=''>
+    <input type="button" value="Search" onclick="searchBookByBookName2()">
+</form>
+
+<br>
+
+<table>
+        <caption><b>Current Book List:</b></caption>
+        <thead>
+            <th>Author name</th>
+            <th>Title</th>
+			<th>Number of pages</th>
+			<th>Genre</th>
+            <th>Edition</th>
+			<th>Price </th>
+			<th>BuybackPrice </th>
+        </thead>  
+        <tbody>
+            {{#each book}} 
+            <tr>
+                <td>{{auth_name}}</td> 
+                <td>{{book_name}}</td> 
+                <td>{{num_pages}}</td> 
+				<td>{{genre}}</td> 
+                <td>{{edition}}</td> 
+                <td>{{price}}</td> 
+				<td>{{buyback_price}}</td> 
+				<td><button onclick="deleteBook({{id}})">Delete</button></td>
+				<td><a href="/book/{{id}}">Update</a></td>
+            </tr> 
+            {{/each}} 
+        </tbody>  
+    </table>
+
+</html>

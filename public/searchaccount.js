@@ -1,6 +1,14 @@
-function searchPeopleByLastName() {
-    //get the last name 
-    var first_name_search_string  = document.getElementById('Last_name_search_string').value
-    //construct the URL and redirect to it
-    window.location = '/accout/search/' + encodeURI(last_name_search_string)
+function searchAccountByLastName() {
+  
+    var last_name  = document.getElementById('last_name').value
+   
+    window.location = '/account/search/' + encodeURI(last_name)
 }
+
+function searchAccountByEmail() {
+  
+    var email  = document.getElementById('email').value
+   
+    window.location = '/account/search/' + encodeURI(email)
+}
+
