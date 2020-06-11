@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+ </head>
+<body>
+<hr>
+ <ul class = "a" >
+   <li class = "a"><a href="index.html">Homepage</a></li>
+   <li class = "a"><a href='/book'>Manage Books</a></li>
+   <li class = "a"><a href='/book_author'>Manage Authors</a></li>
+   <li class = "a"><a href='/account'>Manage Accounts</a></li>
+   <li class = "a"><a href='/orders_books'>Manage Orders</a></li>
+   <li class = "a"><a href='/order'>Manage Balances</a></li>
+	
+</ul>
+
+<br>
+
+<form id='searchAccount' action='' method=''>
+    <label> Enter Author Name:</label>
+    <input id='author' type='text' name='author' value=''>
+    <input type="button" value="Search" onclick="searchBookByAuthor()">
+</form>
+
+
+
+
+<h3> List of Book with Author </h3>
+<table>
+    <thead> 
+        <th>Author</th> 
+		<th>Book Id</th>
+        <th>Title</th> 
+		<th>Edition</th>
+		<th>Price</th>
+    </thead> 
+    <tbody> 
+        {{#each author_book}} 
+        <tr> 
+            <td>{{author}}</td> 
+			<td>{{id}}</td> 
+            <td>{{title}}</td> 
+			<td>{{edition}}</td> 
+			<td>{{price}}</td> 
+			
+           
+        </tr>
+      
+        {{/each}} 
+
+    </tbody>
+</table> 
+</body>
+</html>

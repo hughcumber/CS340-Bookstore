@@ -4,11 +4,9 @@
   <title>Search</title>
   <link rel="stylesheet" href="style.css" type="text/css">
  </head>
-
- 
  <body>
-
-  <ul class = "a" >
+<hr>
+ <ul class = "a" >
    <li class = "a"><a href="index.html">Homepage</a></li>
    <li class = "a"><a href='/book'>Manage Books</a></li>
    <li class = "a"><a href='/book_author'>Manage Authors</a></li>
@@ -17,43 +15,28 @@
    <li class = "a"><a href='/order'>Manage Balances</a></li>
 	
 </ul>
- 
-<h3>Add a new account:</h3>
 
-
-
-<form id="addAccount" action="/account" method="post">
-    Last name: <input type="text" name="last_name"><br>
-    Email: <input type="text" name="email"><br>
-    <input type="submit" value="Submit">
- </form>
-<br/>
-
-<h3>Search account:</h3>
+<h3>Search Order:</h3>
 
 <form id='searchAccount' action='' method=''>
-    <label> Enter Email Address :</label>
+    <label> Enter email:</label>
     <input id='email' type='text' name='email' value=''>
-    <input type="button" value="Search" onclick="searchAccountByEmail()">
+    <input type="button" value="Search" onclick="searchOrderByEmail()">
 </form>
 
 <br>
 
 <table>
-        <caption><b>Current Account:</b></caption>
+        <caption><b>Current Order List:</b></caption>
         <thead>
-            <th>LastName</th>
             <th>Email</th>
-			<th>Balance</th>
+			<th>Order Balance</th>
         </thead>  
         <tbody>
-            {{#each account}} 
+            {{#each order}} 
             <tr>
-                <td>{{last_name}}</td> 
                 <td>{{email}}</td> 
-                <td>{{balance}}</td> 
-				<td><button onclick="deleteAccount({{id}})">Delete</button></td>
-				<td><a href="/account/{{id}}">Update</a></td>
+                <td>{{order_balance}}</td> 
             </tr> 
             {{/each}} 
         </tbody>  

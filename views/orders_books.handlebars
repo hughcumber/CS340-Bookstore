@@ -1,50 +1,47 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <title>Search</title>
+  <title>Purchase</title>
   <link rel="stylesheet" href="style.css" type="text/css">
  </head>
  <body>
- 
-  <ul class = "a" >
+ <hr>
+ <ul class = "a" >
    <li class = "a"><a href="index.html">Homepage</a></li>
    <li class = "a"><a href='/book'>Manage Books</a></li>
    <li class = "a"><a href='/book_author'>Manage Authors</a></li>
    <li class = "a"><a href='/account'>Manage Accounts</a></li>
    <li class = "a"><a href='/orders_books'>Manage Orders</a></li>
-   <li class = "a"><a href='/order'>Manage Balances</a></li>
-	
+   <li class = "a"><a href='/order'>Manage Balances</a></li>	
 </ul>
+ 
 
-<h3>Add a new book:</h3>
-
-
-  <div class="container">
-<form id="addBook" action="/book" method="post">
-    Title: <input type="text" name="book_name"><br>
-	Number of pages: <input type="number" name="num_pages"><br>
-    Genre: <input type="text" name="genre"><br>
-	Edition: <input type="number" name="edition"><br>
-    Price: <input type="number" name="price"><br>
-	Buyback price: <input type="number" name="buyback_price"><br>
+<h3> Add Order </h3>
+   
+   <form id="addOrder" action="/orders_books" method="post">
+    
+    Book id: <input type="text" name="book_id"><br>
+	
+   
+	Order Number (enter today's date plus 2 random number, (e.g, 61000)<input type="number" name="order_num"><br>
+	
+	Email: <input type="text" name="email"><br>
+    
     <input type="submit" value="Submit">
  </form>
- </div>
 <br/>
-
-<h3>Search Book:</h3>
-
-<form id='searchAccount' action='' method=''>
-    <label> Enter Book Title :</label>
-    <input id='book_name' type='text' name='book_name' value=''>
-    <input type="button" value="Search" onclick="searchBookByBookName()">
-</form>
-
-<br>
+   
+   
+   
+   
+</div>
+<br/>
+<h3>List of Books </h3>
 
 <table>
         <caption><b>Current Book List:</b></caption>
         <thead>
+		    <th>Book id </th>
             <th>Title</th>
 			<th>Number of pages</th>
 			<th>Genre</th>
@@ -55,17 +52,49 @@
         <tbody>
             {{#each book}} 
             <tr>
+			    <td>{{book_id}}</td> 
                 <td>{{book_name}}</td> 
                 <td>{{num_pages}}</td> 
 				<td>{{genre}}</td> 
                 <td>{{edition}}</td> 
                 <td>{{price}}</td> 
 				<td>{{buyback_price}}</td> 
-				<td><button onclick="deleteBook({{id}})">Delete</button></td>
-				<td><a href="/book/{{id}}">Update</a></td>
             </tr> 
             {{/each}} 
         </tbody>  
     </table>
+
+
+
+<h3> Order List with Book Title </h3>
+<table>
+    <thead> 
+        <th>Order</th> 
+        <th>Book title</th> 
+		<th>Book edition</th> 
+    </thead> 
+    <tbody> 
+        {{#each book_with_order }} 
+        <tr> 
+		    <td>{{order_num}}</td>
+			<td>{{book_name}}</td>
+			<td>{{edition}}</td>
+            
+			
+        </tr>
+        {{/each}} 
+
+    </tbody>
+</table> 
+
+	
+
+
+
+
+
+
+
 </body>
+
 </html>
