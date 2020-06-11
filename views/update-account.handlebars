@@ -4,13 +4,15 @@
   <title>Search</title>
   <link rel="stylesheet" href="style.css" type="text/css">
  </head>
-
-<ul class = "a" >
+<body>
+<hr>
+ <ul class = "a" >
    <li class = "a"><a href="index.html">Homepage</a></li>
    <li class = "a"><a href='/book'>Manage Books</a></li>
-   <li class = "a"><a href= '/account'>Account</a></li>
-   <li class = "a"><a href="return.html">Return</a></li>
-   <li class = "a"><a href="purchase.html">Purchase</a></li>
+   <li class = "a"><a href='/book_author'>Manage Authors</a></li>
+   <li class = "a"><a href='/account'>Manage Accounts</a></li>
+   <li class = "a"><a href='/orders_books'>Manage Orders</a></li>
+   <li class = "a"><a href='/order'>Manage Balances</a></li>	
 </ul>
 
 
@@ -20,4 +22,5 @@
     Email: <input type="text" name="email" value="{{account.email}}"><br>
 </form>
 <button onclick="updateAccount({{account.id}})">Update</button>
+</body>
 </html>
